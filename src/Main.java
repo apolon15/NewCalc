@@ -20,8 +20,9 @@ public class Main {
         if (m.find()) {
             String newInput = input.substring(input.indexOf('(') + 1, input.lastIndexOf(')'));
             newInput = getNum(newInput);
-            input = input.replaceAll("\\(-?\\d+[*+-/]\\d+\\)", newInput);
-
+            input = input.replaceAll("(\\(-?\\d+[\\/*-+])*(\\(?-?\\d+[\\/*-+]\\d+\\)*)", newInput);
+//      "\\(-?\\d+[*+-/]\\d+\\)"
+            //(\(-?\d+[\/*-+])*(\(?-?\d+[\/*-+]\d+\)*)
         }
         Stack<Double> stackNumb = new Stack<>();
         Stack<Character> stackChar = new Stack<>();
